@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Supabase からデータ取得</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+  <h1>メッセージ一覧</h1>
+  <ul id="messageList"></ul>
+
+  <script>
+      async function fetchMessages() {
+        const res = await fetch('https://fvfkwwhuiirsrzqgeeey.supabase.co/functions/v1/get-messages');
+        const data = await res.json();
+        console.log(data);
+      }
+      fetchMessages()
+  </script>
+</body>
+</html>
